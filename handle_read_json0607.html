@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<!-- #joey - 歷史資訊欄 -->
+<!-- 目錄 : -->
+<!-- 1. head 區域 cdnjs : meta SEO, Boots CSS, ... -->
+<!-- meta SEO, Boots CSS,  GA(gtag.js), CSS<style>, title, -->
+<!-- 引用 handlebars -->
+<!-- jquery 處理 -->
+<!-- 2. btn links -->
+<!-- 3. 服務內容介紹區塊 -->
+<!-- 準備嵌入 handlebars, 沒有哪麼快, 要 keep walking -->
+<!-- 4. 連結至表單 聯絡訊息與服務 -->
+<!-- 5. 頁尾內容區塊 -->
+
+
+<!-- 改成 G1 github & netlify 20220516 -->
+
+<head>
+    <!-- #joey - head 區域 : meta SEO, Boots CSS, title, GA(gtag.js), CSS<style>, jquery 處理-->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 引用 handlebars -->
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script type='text/javascript'
+        src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js'></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics joey 網頁串流詳情 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6XD9GQZ21"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-C6XD9GQZ21');
+    </script>
+
+
+    <style>
+        * {
+            /*頁面所有元素*/
+            font-family: microsoft jhengHei;
+            /*字型*/
+        }
+    </style>
+    <!-- #joey 其他 css 轉到 styles/joey_style.css 強化 可讀性 -->
+    <link href="styles/joey_style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- #joey - jquery 處理 -->
+
+    <script>
+        $(function () {
+            var ww = $(window).width()
+            // alert(ww)
+            $("#btn1,#btn2,#btn3").click(function () {
+                var btnNumber = event.target.id
+                switch (btnNumber) {
+                    case "btn1":
+                        $('#service1').show()
+                        $("#service2,#service3").hide()
+                        break;
+                    case "btn2":
+                        $('#service2').show()
+                        $("#service1,#service3").hide()
+                        break;
+                    case "btn3":
+                        $('#service3').show()
+                        $("#service1,#service2").hide()
+                        break;
+                }
+            })
+            if (ww <= 768) {
+                $("#service2,#service3").hide()
+                $("#navi").show()
+            } else {
+                $("#service2,#service3").show()
+                $("#navi").hide()
+            }
+
+        })
+    </script>
+
+    <!-- <title>形象網站-登陸頁 工作室形象網站</title> -->
+    <title>TEST 形象網站</title>
+</head>
+
+<body>
+
+    <!-- 0604joey 要改 4 組文字, 3張照片 -->
+    <!--文字活動標語-->
+    <script id="input" type="text/x-handlebars-template">
+         <h4 class="mt-1  px-5">{{values.[1].[2]}}</h4>
+         <h4 class="mt-1  px-5">{{values.[1].[3]}}</h4>
+         <h4 class="mt-1  px-5">{{values.[1].[4]}}</h4>
+         <h4 class="mt-1  px-5">{{values.[1].[5]}}</h4>
+         <h4 class="mt-1  px-5">{{values.[1].[6]}}</h4>
+
+        <!--服務內容介紹區塊1-->
+         <div class="row m-0 mt-3" id="service1">
+            <div class="col-md-6 col-lg-4 offset-lg-2 text-sm-right infoArea"><img src={{values.[2].[1]}} alt="" //
+                class="img-fluid infoPic"></div>
+                <div class="col-md-6 col-lg-4">
+                    <h2 class="mt-5 px-5">{{values.[2].[2]}}</h2>
+                    <p class="text-justify px-3 txtFormat">{{values.[2].[3]}}</p>
+                </div>
+        </div>
+
+
+        <!--服務內容介紹區塊2-->
+        <div class="row m-0 mt-3" id="service2">
+                <div class="col-md-6 col-lg-4 offset-lg-2 text-sm-right">
+                    <h2 class="mt-5 px-5">{{values.[3].[2]}}</h2>
+                    <p class="text-justify px-3 txtFormat">{{values.[3].[3]}}</p>
+                </div>
+                <div class="col-md-6 col-lg-4 infoArea"><img src={{values.[3].[1]}} alt="" class="img-fluid infoPic"></div>
+            </div>
+        </div>
+
+
+        <!--服務內容介紹區塊3-->
+        <div class="row m-0 mt-3" id="service3">
+
+            <div class="col-md-6 col-lg-4 offset-lg-2 text-sm-right infoArea"><img src={{values.[4].[1]}} alt="" class="img-fluid infoPic"></div>
+            <div class="col-md-6 col-lg-4">
+                    <h2 class="mt-5 px-5">{{values.[4].[2]}}</h2>
+                    <p class="text-justify px-3 txtFormat">{{values.[4].[3]}}</p>
+                </div>
+        </div>
+
+    </script>
+
+    <!-- 2. 標籤要渲染的位置 -->
+    <div id="output"></div>
+
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->
+
+    <script>
+        $(function () {
+            $.get('https://sheets.googleapis.com/v4/spreadsheets/1SbtdNOyfJ7J57EElusRHXHptQCm9vO55GRxpq8xReCU/values/list2?alt=json&key=AIzaSyDQJnRmuvThGNBt3Z3SLRliA4crPBg6BX0', function (data_html) {
+                console.log(data_html);
+
+                var source = document.getElementById("input").innerHTML; // 載入模板 (3. 載入模板 "input")
+                var template = Handlebars.compile(source);
+                // html = template(context); // 存成HTML
+                // var html = template(data.person.firstname); // 4. 導入資料 : 存成HTML (json type)
+                var html = template(data_html)
+                document.getElementById("output").innerHTML = html; // 5. 輸出 (渲染到 html id="output" 地方)
+            });
+        });
+        // json no ajax 測試區
+        var data_gds = {
+            "values": [
+                [
+                    "images/1.jpg", "images/2.jpg",
+                ],
+                [
+                    "images/3.jpg", "images/4.jpg",
+                ]
+            ]
+        }
+        // json 有包含 array, 要檢查 資料型態
+        console.log(data_gds.values[0][0]);
+
+    </script>
+</body>

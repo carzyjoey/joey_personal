@@ -1,0 +1,208 @@
+* {
+    /*頁面所有元素*/
+    font-family: microsoft jhengHei;
+    /*字型*/
+}
+
+.logoIcon {
+    /*class代號為logoIcon的標籤*/
+    font-variant: normal;
+    /*字元加粗*/
+    /* width: 100px;寬度 */
+    /* height: 100px;高度 */
+    width: 350px;
+    /* 寬度 */
+    height: 350px;
+    /* 高度 */
+    border-radius: 100%;
+    /*圓角*/
+    text-align: center;
+    /*內容水平置中*/
+    display: block;
+    /*區塊顯示*/
+    margin: 80px auto;
+    /*外距*/
+    margin-bottom: 20px;
+    /*下外距*/
+    line-height: 80px;
+    /*行高*/
+    position: relative;
+    /*相對位置方式置入*/
+    z-index: 99;
+    /*元素順序安排在99層*/
+}
+
+.skew1 {
+    /*class代號為skew1的標籤*/
+    transform: skewY(15deg) translate(0px, -150px);
+    /*傾斜變形與位移*/
+    height: 55vh;
+    /*400/1080*/
+    /*高度*/
+    position: relative;
+    /*相對位置方式置入*/
+    z-index: -1;
+    /*元素順序安排在最下層*/
+}
+
+.skew2 {
+    /*class代號為skew2的標籤*/
+    transform: skewY(-15deg) translate(0px, -150px);
+    /*傾斜變形與位移*/
+    height: 55vh;
+    /*400/1080*/
+    /*高度*/
+    position: relative;
+    /*相對位置方式置入*/
+    z-index: -1;
+    /*元素順序安排在最下層*/
+}
+
+.skew3 {
+    /*class代號為skew3的標籤*/
+    transform: skewY(15deg) translate(0px, -175px);
+    /*傾斜變形與位移*/
+    height: 30px;
+    /*高度*/
+}
+
+.skew4 {
+    /*class代號為skew4的標籤*/
+    transform: skewY(-15deg) translate(0px, -175px);
+    /*傾斜變形與位移*/
+    height: 30px;
+    /*高度*/
+}
+
+.skew5 {
+    /*class代號為skew5的標籤*/
+    transform: skewY(15deg) translate(0px, -230px);
+    /*傾斜變形與位移*/
+    height: 30px;
+    /*高度*/
+    border: 1px rgba(200, 200, 200, 0.15) solid;
+    /*邊框*/
+}
+
+.skew6 {
+    /*class代號為skew6的標籤*/
+    transform: skewY(-15deg) translate(0px, -230px);
+    /*傾斜變形與位移*/
+    height: 30px;
+    /*高度*/
+    border: 1px rgba(200, 200, 200, 0.15) solid;
+    /*邊框*/
+}
+
+.skew7 {
+    /*class代號為skew7的標籤*/
+    transform: skewY(15deg) translate(0px, 150px);
+    /*傾斜變形與位移*/
+    height: 30px;
+    /*高度*/
+}
+
+.skew8 {
+    /*class代號為skew8的標籤*/
+    transform: skewY(-15deg) translate(0px, 150px);
+    /*傾斜變形與位移*/
+    height: 30px;
+    /*高度*/
+}
+
+.skew9 {
+    /*class代號為skew9的標籤*/
+    transform: skewY(15deg) translate(0px, 150px);
+    /*傾斜變形與位移*/
+    height: 55vh;
+    /*300/1080*/
+    /*高度*/
+    position: relative;
+    /*相對位置方式置入*/
+    z-index: -1;
+    /*元素順序安排在最下層*/
+}
+
+.skew10 {
+    /*class代號為skew10的標籤*/
+    transform: skewY(-15deg) translate(0px, 150px);
+    /*傾斜變形與位移*/
+    height: 55vh;
+    /*300/1080*/
+    position: relative;
+    /*相對位置方式置入*/
+    z-index: -1;
+    /*元素順序安排在最下層*/
+}
+
+.msgBox {
+    /*class代號為msgBox的標籤*/
+    resize: none;
+    /*取消調整尺寸功能*/
+    height: 25vh;
+    /*高度*/
+}
+
+.btnup {
+    /*class代號為msgBox的標籤*/
+    position: relative;
+    /*相對位置方式置入*/
+    z-index: 55;
+    /*元素順序安排在55層*/
+}
+
+[class*="col-sm-4"] {
+    /*標籤有套用class且有包含col- */
+    padding: 0px;
+    /*清除內距*/
+}
+
+.txtFormat {
+    /*class代號為txtFormat的標籤*/
+    letter-spacing: 2px;
+    /*字距*/
+    line-height: 36px;
+    /*行距*/
+    padding-top: 3%;
+    /*上內距*/
+    box-sizing: border-box;
+    /*避免因為增加內距而造成區塊寬高度被撐開影響版面*/
+}
+
+.infoArea {
+    /*class代號為infoArea的標籤*/
+    overflow: hidden;
+    /*溢位隱藏*/
+    margin-bottom: 5%;
+    /*下外距*/
+}
+
+.infoArea .infoPic {
+    /*class代號為txtFormat的標籤*/
+    transition: all 0.8s;
+    /*0.8秒進行轉變*/
+    opacity: 0.75;
+    /*不透明度*/
+    filter: brightness(0.8);
+    /*亮度濾鏡*/
+    height: 100%;
+    /*高度*/
+    width: 100%;
+    /*寬度*/
+}
+
+.infoArea .infoPic:hover {
+    /*class代號為infoArea的標籤底下代號為infoPic的標籤*/
+    cursor: pointer;
+    /*游標形狀*/
+    opacity: 1;
+    /*不透明度*/
+    filter: brightness(1);
+    /*亮度濾鏡*/
+    transform: scale(1.5, 1.5);
+    /*變形縮放*/
+}
+
+#navi {
+    text-align: center;
+}
